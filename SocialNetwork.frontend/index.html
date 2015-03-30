@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keyword" content="">
+
+    <title>Social App</title>
+
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="content/css/site.css" rel="stylesheet">
+</head>
+<body ng-app="mainApp" ng-cloak>
+    <!-- Start Header-->
+    <div ng-controller="authDataCtrl" ng-show="isAuthenticated" id="auth-top-navbar" class="navbar navbar-inverse navbar-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Glavna navigacija</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home"> Social App</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <!-- User authenticated -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id="top-navbar-button" ui-sref="home" class="btn">Home</a></li>
+                <li><a id="top-navbar-button" ui-sref="authProfile" class="btn">Profile</a></li>
+
+                <!-- settings -->
+                <li class="dropdown">
+                    <a id="top-navbar-button" class="dropdown-toggle btn"><i class="glyphicon glyphicon-cog"></i></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="home">Some link</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="home" ng-show="!isValidated">Some link</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li ng-controller="logoutCtrl" role="presentation"><a ng-click="logout()" role="menuitem" tabindex="-1" href="#">Odjavi se</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Search -->
+            <!-- remove data if result are be same -->
+            <div>
+                <header-search data="currentUser">
+                </header-search>
+            </div>
+        </div>
+    </div>
+
+
+    <div ui-view></div>
+
+    <!-- 3rd party libraries -->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-resource/angular-resource.min.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="libs/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="libs/angular-utils-pagination/dirPagination.js"></script>
+    <script src="libs/igTruncate/dist/igTruncate.min.js"></script>
+    <script src="libs/angular-file-upload/angular-file-upload.min.js"></script>
+
+    <!-- Load main app -->
+    <script src="app/app.js"></script>
+
+    <!-- Load common -->
+    <script src="app/common/services/authDataService.js"></script>
+    <script src="app/common/controllers/authDataCtrl.js"></script>
+    <script src="app/common/interceptors/authInterceptor.js"></script>
+
+    <!-- Load home -->
+    <script src="app/home/controllers/homeCtrl.js"></script>
+
+    <!-- Load authentication -->
+    <script src="app/authentication/services/authService.js"></script>
+    <script src="app/authentication/controllers/loginCtrl.js"></script>
+    <script src="app/authentication/controllers/signupCtrl.js"></script>
+    <script src="app/authentication/controllers/logoutCtrl.js"></script>
+
+    <!-- Load headerSearch -->
+    <script src="app/headerSearch/directives/headerSearchDirective.js"></script>
+    <script src="app/headerSearch/services/headerSearchService.js"></script>
+
+    <!-- Load authProfile -->
+    <script src="app/authProfile/services/authProfileService.js"></script>
+    <script src="app/authProfile/services/authAboutMeService.js"></script>
+    <script src="app/authProfile/services/authBasicInfoService.js"></script>
+
+    <script src="app/authProfile/directives/authBasicInfoDirective.js"></script>
+    <script src="app/authProfile/directives/authLocationInfoDirective.js"></script>
+
+    <script src="app/authProfile/controllers/authProfileCtrl.js"></script>
+    <script src="app/authProfile/controllers/authTimelineCtrl.js"></script>
+    <script src="app/authProfile/controllers/authAboutMeCtrl.js"></script>
+
+
+</body>
+</html>

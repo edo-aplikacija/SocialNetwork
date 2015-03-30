@@ -1,0 +1,78 @@
+﻿<div>
+    <!-- BASIC INFO -->
+    <div  class="panel panel-primary">
+        <div id="auth-about-me-panel-heading" class="panel-heading">
+            <div class="panel-title">
+                <div>
+                    Basic Information
+                    <div class="pull-right">
+                        <i title="Visibilty" id="auth-about-me-visible-edit" class="glyphicon glyphicon-globe"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel-body">
+            <table id="auth-profile-table" class="table">
+                <!-- VISIBLE TO -->
+                <tr ng-show="basicVisibilityError">
+                    <td colspan="3"><alert type="danger" close="closeBasicVisibilityError()">{{ basicVisibilityError }}</alert></td>
+                </tr>
+                <tr>
+                    <td id="auth-about-me-td-field">Visible to</td>
+                    <td ng-show="!editBasicVisibility" id="auth-about-me-td-data" class="text-right">{{ basicInfo.visibleTo }}</td>
+                    <td ng-show="editBasicVisibility" id="auth-about-me-td-data" class="text-right">
+                        <select ng-model="changedBasicVisibility" ng-options="g for g in allowedBasicVisibility"></select>
+                    </td>
+                    <td ng-show="!editBasicVisibility" class="text-right">
+                        <i ng-click="enableEditBasicVisibility(basicInfo.visibleTo)" title="Edit" id="auth-about-me-td-edit" class="glyphicon glyphicon-edit"></i>
+                    </td>
+                    <td ng-show="editBasicVisibility" class="text-right">
+                        <button id="auth-about-me-edit-ok" ng-click="updateBasicVisibility(changedBasicVisibility)" title="OK" class="btn-success"><i class="glyphicon glyphicon-ok"></i></button>
+                        <button id="auth-about-me-edit-cancel" ng-click="cancelBasicVisibility()" title="Cancel" class="btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+                    </td>
+                </tr>
+                <!-- GENDER -->
+                <tr ng-show="genderError">
+                    <td colspan="3"><alert type="danger" close="closeGenderError()">{{ genderVisibilityError }}</alert></td>
+                </tr>
+                <tr>
+                    <td id="auth-about-me-td-field">Gender</td>
+                    <td ng-show="!editGender" id="auth-about-me-td-data" class="text-right">{{basicInfo.gender }}</td>
+                    <td ng-show="editGender" id="auth-about-me-td-data" class="text-right">
+                        <select ng-model="changedGender" ng-options="g for g in allowedGenders"></select>
+                    </td>
+                    <td ng-show="!editGender" class="text-right">
+                        <i ng-click="enableEditGender(basicInfo.gender)" title="Edit" id="auth-about-me-td-edit" class="glyphicon glyphicon-edit"></i>
+                    </td>
+                    <td ng-show="editGender" class="text-right">
+                        <button id="auth-about-me-edit-ok" ng-click="updateGender(changedGender)" title="OK" class=""><i class="glyphicon glyphicon-ok"></i></button>
+                        <button id="auth-about-me-edit-cancel" ng-click="cancelGender()" title="Cancel" class=""><i class="glyphicon glyphicon-remove"></i></button>
+                    </td>
+                </tr>
+                <!-- BIRTHDAY -->
+                <tr ng-show="birthdayError">
+                    <td colspan="3"><alert type="danger" close="closeBirthdayError()">{{ genderVisibilityError }}</alert></td>
+                </tr>
+                <tr>
+                    <td id="auth-about-me-td-field">Birthday</td>
+                    <td ng-show="!editBirthday" id="auth-about-me-td-data" class="text-right">{{ basicInfo.birthday | date:'dd MMMM yyyy'  }}</td>
+                    <td ng-show="editBirthday" id="auth-about-me-td-data" class="text-right">{{ changedBirthday | date:'dd MMMM yyyy'  }}</td>
+                    <td ng-show="!editBirthday" class="text-right">
+                        <i ng-click="enableEditBirthday(basicInfo.birthday)" title="Edit" id="auth-about-me-td-edit" class="glyphicon glyphicon-edit"></i>
+                    </td>
+                    <td ng-show="editBirthday" class="text-right">
+                        <button id="auth-about-me-edit-ok" ng-click="updateBirthday(changedBirthday)" title="OK" class="btn-success"><i class="glyphicon glyphicon-ok"></i></button>
+                        <button id="auth-about-me-edit-cancel" ng-click="cancelBirthday()" title="Cancel" class="btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" ng-show="editBirthday" id="auth-about-me-td-data" class="text-right">
+                        <datepicker ng-model="changedBirthday" min-date="minBirthday" max-date="maxBirthday" show-weeks="false" class="well well-sm"></datepicker>
+                    </td>
+                </tr>               
+            </table>
+        </div>
+    </div>
+</div>

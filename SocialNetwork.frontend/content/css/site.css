@@ -1,0 +1,167 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+body, h1 {
+  font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1, p {
+    color: #fff;
+}
+#home-spacer {
+    height:8em;
+    background:rgb(91,172,199); 
+}
+#home-first-row {  
+   background:rgb(91,172,199); 
+}
+#home-welcome-div {
+
+}
+#home-welcome-h1 {
+    font-size: 4em;
+    font-weight: 200;
+}
+#home-app-name {
+    font-weight: 600;
+}
+#home-welcome-p {
+    font-size: 2em;
+}
+#home-auth-buttons-div {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+#home-login-button {
+    font-size: 1.5em;
+    color: antiquewhite;
+    border: 2px solid antiquewhite;
+    padding: 0.6em 1em;
+    text-decoration: none;
+    background:none;
+    margin-right:25px;
+    margin-bottom:25px;
+}
+#home-login-button:hover, #home-signin-button:hover, #signup-submit:hover {
+    color: rgb(62,154,177);
+    border: 2px solid antiquewhite;
+    background: antiquewhite;
+    cursor:pointer;
+}
+#home-signin-button {
+    font-size: 1.5em;
+    color: antiquewhite;
+    border: 2px solid antiquewhite;
+    padding: 0.6em 1em;
+    text-decoration: none;
+    background: rgb(0, 163, 203);
+}
+#home-span-icon {
+    color: rgb(91,172,199);
+}
+#sign-up-main-div {
+    background:none;
+    color: antiquewhite;
+}
+#sign-up-title {
+    color: antiquewhite;
+    font-size: 2em;
+}
+#signup-panel-body {
+    padding-top: 30px;
+}
+#signup-input-group {
+    margin-bottom: 25px;
+}
+#signup-submit {
+    background: none;
+    font-size: 1.5em;
+    color: antiquewhite;
+    border: 2px solid antiquewhite;
+    padding: 0.5em 1em;
+    margin-right: 25px;
+    text-decoration: none;
+}
+#login-main-div {
+    background:none;
+    margin-top: 5px;
+}
+#auth-top-navbar {
+    background:rgb(91,172,199);
+    background-color: rgb(91,172,199);
+    border: none;
+    
+}
+#top-navbar-button:hover, #top-navbar-button:focus {
+    background: #fff;
+    color: rgb(91,172,199);
+    border-radius: 0;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: antiquewhite;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background: antiquewhite;
+}
+.nav-tabs {
+    background:rgb(91,172,199);
+}
+a {
+    color: antiquewhite;
+}
+#auth-profile-first-row {
+    margin-bottom: 10px;
+}
+#auth-profile-col-logo-img {
+    margin-top: -130px;
+}
+#auth-profile-logo-large {
+    margin-left: 10px;
+    max-width: 120px;
+    max-height: 170px;
+}
+#auth-profile-col-cover-img {
+
+}
+#auth-about-me-panel-heading {
+    background:rgb(91,172,199);
+}
+#auth-about-me-visible-edit:hover {
+    color: rgb(0, 13, 255);
+    cursor: pointer;
+}
+#auth-about-me-td-field {
+    color: rgb(155, 155, 155);
+}
+#auth-about-me-td-data {
+    color: #000000
+}
+#auth-about-me-td-edit {
+    color: rgb(182, 182, 182);
+    cursor: pointer;
+}
+#auth-about-me-td-edit:hover {
+    color: #2fa4e7;
+}
+#auth-about-me-edit-ok {
+    background: rgb(153, 213, 195);
+    border: 2px solid rgb(153, 213, 195);
+    color: antiquewhite;
+}
+#auth-about-me-edit-ok:hover {
+    background: rgb(81, 181, 151);
+}
+#auth-about-me-edit-cancel {
+    background: rgb(240, 194, 194);
+    border: 2px solid rgb(240, 194, 194);
+    color: antiquewhite;
+}
+#auth-about-me-edit-cancel:hover {
+    background: rgb(205, 88, 88);
+}
+#auth-about-me-add-new-field {
+    color: rgb(91,172,199);
+}
+#auth-about-me-add-new-field:hover {
+    cursor:pointer;
+    background: rgb(91,172,199);
+    color:antiquewhite;
+}

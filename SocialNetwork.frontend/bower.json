@@ -1,0 +1,27 @@
+{
+  "name": "SocialNetwork.frontend",
+  "version": "1.0.0",
+  "authors": [
+    "edopolimac <edopolimac@gmail.com>"
+  ],
+  "description": "client side for social network",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "angularJS"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.0",
+    "angular": "~1.3.2",
+    "angular-local-storage": "~0.1.5",
+    "angular-ui-router": "~0.2.11",
+    "angular-resource": "~1.3.2",
+    "igTruncate": "~0.1.2",
+    "angular-bootstrap": "~0.11.2",
+    "angular-utils-pagination": "~0.3.2",
+    "angular-file-upload": "~1.1.5"
+  }
+}

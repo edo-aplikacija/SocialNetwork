@@ -1,0 +1,25 @@
+﻿<div>
+    <div id="header-search-main" class="nav navbar-nav navbar-right col-md-6">
+        <div class="nav navbar-nav dropdown col-sm-12">
+            <div class="input-group tpad">
+                <span id="header-search-icon" class="input-group-addon glyphicon glyphicon-search"></span>
+                <input id="search" class="form-control"
+                       data-toggle="dropdown" type="text" placeholder="Pretraga..." autocomplete="off" name="search"
+                       ng-keyup="updateHeaderSeachText(headerSearchText)" ng-model="headerSearchText">
+                <ul id="search-results" class="dropdown-menu col-sm-12" role="menu">
+                    <li class="text-center" ng-show="headerSearchNoResult">{{ headerSearchNoResult }}</li>
+                    <li ng-click="goToProfilePreview(headerSearchData)" ng-show="headerSearchResult" ng-repeat="headerSearchData in headerSearchResult">
+                        <a id="header-search-result" class="col-sm-12">
+                            <div class="col-sm-2"><img id="header-search-img" class="img-rounded img-responsive" ng-src="{{ headerSearchData.profilePicture }}" /></div>
+                            <div class="col-sm-10">
+                                <div id="header-search-user"><i class="glyphicon glyphicon-user"></i> {{ headerSearchData.name }}</div>
+                                <div id ="header-search-location"><i class="glyphicon glyphicon-map-marker"></i> {{ headerSearchData.country }}, {{ headerSearchData.city }}</div>
+                                <div id="header-search-category"><i class="glyphicon glyphicon-briefcase"></i> {{ headerSearchData.category }}</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

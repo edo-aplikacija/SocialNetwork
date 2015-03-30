@@ -1,0 +1,86 @@
+﻿<div>
+    <!-- LOCATION INFO -->
+    <div class="panel panel-primary">
+        <div id="auth-about-me-panel-heading" class="panel-heading">
+            <div class="panel-title">
+                <div>
+                    Location Information
+                    <div class="pull-right">
+                        <i title="Visibilty" id="auth-about-me-visible-edit" class="glyphicon glyphicon-globe"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel-body">
+            <table id="auth-profile-table" class="table">
+                <!-- VISIBLE TO -->
+                <tr ng-show="locationVisibilityError">
+                    <td colspan="3"><alert type="danger" close="closeLocationVisibilityError()">{{ locationVisibilityError }}</alert></td>
+                </tr>
+                <tr>
+                    <td id="auth-about-me-td-field">Visible to</td>
+                    <td ng-show="!editLocationVisibility" id="auth-about-me-td-data" class="text-right">{{ locationInfo.visibleTo }}</td>
+                    <td ng-show="editLocationVisibility" id="auth-about-me-td-data" class="text-right">
+                        <select ng-model="changedLocationVisibility" ng-options="g for g in allowedLocationVisibility"></select>
+                    </td>
+                    <td ng-show="!editLocationVisibility" class="text-right">
+                        <i ng-click="enableEditLocationVisibility(locationInfo.visibleTo)" title="Edit" id="auth-about-me-td-edit" class="glyphicon glyphicon-edit"></i>
+                    </td>
+                    <td ng-show="editLocationVisibility" class="text-right">
+                        <button id="auth-about-me-edit-ok" ng-click="updateLocationVisibility(changedLocationVisibility)" title="OK" class="btn-success"><i class="glyphicon glyphicon-ok"></i></button>
+                        <button id="auth-about-me-edit-cancel" ng-click="cancelLocationVisibility()" title="Cancel" class="btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+                    </td>
+                </tr>
+                <!-- HOMETOWN -->
+                <tr ng-show="hometownError">
+                    <td colspan="3"><alert type="danger" close="closeHometownError()">{{ hometownVisibilityError }}</alert></td>
+                </tr>
+                <tr ng-show="!emptyField(locationInfo.hometown)">
+                    <td id="auth-about-me-td-field">Hometown</td>
+                    <td ng-show="!editHometown" id="auth-about-me-td-data" class="text-right">{{ locationInfo.hometown }}</td>
+                    <td ng-show="editHometown" id="auth-about-me-td-data" class="text-right">
+                        <select ng-model="changedHometown" ng-options="g for g in allowedHometowns"></select>
+                    </td>
+                    <td ng-show="!editHometown" class="text-right">
+                        <i ng-click="enableEditHometown(locationInfo.hometown)" title="Edit" id="auth-about-me-td-edit" class="glyphicon glyphicon-edit"></i>
+                    </td>
+                    <td ng-show="editHometown" class="text-right">
+                        <button id="auth-about-me-edit-ok" ng-click="updateHometown(changedHometown)" title="OK" class=""><i class="glyphicon glyphicon-ok"></i></button>
+                        <button id="auth-about-me-edit-cancel" ng-click="cancelHometown()" title="Cancel" class=""><i class="glyphicon glyphicon-remove"></i></button>
+                    </td>
+                </tr>
+                <!-- CURRENT CITY -->
+                <tr ng-show="birthdayError">
+                    <td colspan="3"><alert type="danger" close="closeBirthdayError()">{{ hometownVisibilityError }}</alert></td>
+                </tr>
+                
+                <tr ng-show ="!emptyField(locationInfo.currentCity)">
+                    <td id="auth-about-me-td-field">Current city</td>
+                    <td ng-show="!editBirthday" id="auth-about-me-td-data" class="text-right">{{ locationInfo.birthday | date:'dd MMMM yyyy'  }}</td>
+                    <td ng-show="editBirthday" id="auth-about-me-td-data" class="text-right">{{ changedBirthday | date:'dd MMMM yyyy'  }}</td>
+                    <td ng-show="!editBirthday" class="text-right">
+                        <i ng-click="enableEditBirthday(locationInfo.birthday)" title="Edit" id="auth-about-me-td-edit" class="glyphicon glyphicon-edit"></i>
+                    </td>
+                    <td ng-show="editBirthday" class="text-right">
+                        <button id="auth-about-me-edit-ok" ng-click="updateBirthday(changedBirthday)" title="OK" class="btn-success"><i class="glyphicon glyphicon-ok"></i></button>
+                        <button id="auth-about-me-edit-cancel" ng-click="cancelBirthday()" title="Cancel" class="btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" ng-show="editBirthday" id="auth-about-me-td-data" class="text-right">
+                        <datepicker ng-model="changedBirthday" min-date="minBirthday" max-date="maxBirthday" show-weeks="false" class="well well-sm"></datepicker>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="auth-about-me-add-new-field" class="text-center" colspan="3"><i class="glyphicon glyphicon-plus"></i> Add hometown</td>
+                </tr>
+                <tr>
+                    <td id="auth-about-me-add-new-field" class="text-center" colspan="3"><i class="glyphicon glyphicon-plus"></i> Add current city</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

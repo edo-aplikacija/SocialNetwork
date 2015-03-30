@@ -1,0 +1,33 @@
+﻿<div class="row">
+    <div class="col-md-9">
+        <div id="auth-profile-first-row" class="row">
+            <div id="auth-profile-col-cover-img" class="col-md-12">
+                <div class="col-md-12">
+                    <img class="img-responsive" ng-src="{{ authUserData.authInfo.profileCoverPicture }}" />
+                </div>              
+                <div id="auth-profile-col-logo-img" class="col-md-2">
+                    <img id="auth-profile-logo-large" class="img-responsive img-rounded img-thumbnail" ng-src="{{ authUserData.authInfo.profilePicture }}" />
+                </div>
+                <div class="col-md-10">
+                    <div role="tabpanel">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a ui-sref="authProfile.timeline">Timeline</a></li>
+                            <li role="presentation"><a ui-sref="authProfile.aboutMe">About me</a></li>
+                            <li role="presentation"><a ui-sref="authProfile.timeline">Photos</a></li>
+                            <li role="presentation"><a ui-sref="authProfile.timeline">Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" ui-view>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        Notification
+    </div>   
+</div>
+

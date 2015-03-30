@@ -1,0 +1,18 @@
+{
+  "name": "SocialNetwork.backend",
+  "version": "0.0.0",
+  "description": "SocialNetwork.backend",
+  "main": "server.js",
+  "author": {
+    "name": "Edo Polimac",
+    "email": "edopolimac@gmail.com"
+  },
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "express": "^4.10.2",
+    "jwt-simple": "^0.2.0",
+    "mongoose": "^3.8.19",
+    "mongoose-validator": "^1.0.2",
+    "validator": "^3.22.1"
+  }
+}

@@ -1,0 +1,33 @@
+﻿<div id="login-main-div" class="panel">
+    <div class="panel-heading">
+        <div id="sign-up-title" class="panel-title">Welcome back! Log in below.</div>
+    </div>
+    <div id="login-panel-body" class="panel-body">
+        <form ng-controller="loginCtrl" class="form-horizontal" role="form" ng-submit="login(credentials)">
+            <!-- Login error -->
+            <alert ng-show="loginError" type="danger" close="closeLoginError()">{{ loginError }}</alert>
+            <!-- Email -->
+            <div id="signup-input-group" class="input-group">
+                <span id="home-span-icon" class="input-group-addon">
+                    <i class="glyphicon glyphicon-envelope"></i>
+                </span>
+                <input type="email" class="form-control" placeholder="Enter email"
+                       ng-model="credentials.email">
+            </div>
+
+            <!-- Password -->
+            <div id="signup-input-group" class="input-group">
+                <span id="home-span-icon" class="input-group-addon">
+                    <i class="glyphicon glyphicon-lock"></i>
+                </span>
+                <input type="password" class="form-control" placeholder="Password"
+                       ng-model="credentials.password">
+            </div>
+            <div style="margin-top: 10px" class="form-group">
+                <div class="col-sm-12 controls">
+                    <input id="signup-submit" type="submit" value="OK">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
